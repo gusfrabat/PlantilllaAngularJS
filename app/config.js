@@ -55,7 +55,8 @@ angular.module('PlantillaAngularJs')
           desp: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load ([{
               files: [
-                'app/controller/controller.pagina4.js'
+                'app/controller/controller.pagina4.js',
+                'css/Login.css'
               ]
             }]);
           }]

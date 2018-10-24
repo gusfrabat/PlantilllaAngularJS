@@ -1,5 +1,20 @@
+<div class="container mx-auto col-5">
+    <div class="text-center">
+        <h1>Prueba 1</h1>
+        <ul>
+            <li ng-repeat="x in products" class="mt-5 mb-5">{{x}}</li>
+        </ul>
+        <div class="mx-auto">
+            <input placeholder="Digitar cedular" ng-keypress="$event.keyCode === 13 && addItem()" ng-model="addMe"
+                class="form-control col-auto mt-5 mb-5" type="number" autofocus>
+            <button ng-click="addItem()" class="btn btn-info col-5 mt-5 mb-5">Entrada Manual</button>
+        </div>
+    </div>
+</div>
 
-<div class="text-center list-group col-5 offset-4">
+
+
+<div class="text-center list-group col-5 mx-auto">
     <button type="button" class="btn  btn-outline-primary list-group-item " ng-click="pagina1()">pagina 1</button>
     <button type="button" class="btn  btn-outline-primary list-group-item " ng-click="pagina3()">pagina 3</button>
     <button type="button" class="btn  btn-outline-primary list-group-item " ng-click="pagina4()">pagina 4</button>

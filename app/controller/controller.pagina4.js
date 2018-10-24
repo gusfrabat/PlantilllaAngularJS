@@ -5,11 +5,13 @@
         .module('PlantillaAngularJs')
         .controller('pagina4Controller', pagina4Controller)
 
-    pagina4Controller.$inject = ['$location'];
+    pagina4Controller.$inject = ['$scope', '$state', '$log'];
 
-    function pagina4Controller($location) {
- 
+    function pagina4Controller($scope, $state, $log) {
 
-        
+        $scope.login = () => {
+            $state.go('pagina2');
+        }
+
     }
 })();
