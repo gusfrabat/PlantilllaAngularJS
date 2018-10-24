@@ -1,0 +1,1 @@
+angular.module('PlantillaAngularJs').constant('urlBase', 'http://localhost:/plantilla_angularjs/public/index.html');
