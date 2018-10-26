@@ -2,25 +2,25 @@
 <div class="row container-fluid m-0 p-0" style="height: 100vh; width: 100vw;">
 
 
-    <div class="col-8" style="background: rgb(0, 0, 0)" >
+    <div class="col-8 d-none d-xl-block" style="background: rgb(0, 0, 0)" >
 
     </div>
 
-<div class="col-12 col-xl-4 col-lg-4 mx-auto text-center container_logIn" >
+<div class="col-12 col-sm-8 col-md-5 col-xl-4 col-lg-4 mx-auto text-center container_logIn" >
     <div>
         <form>
             <div>
-                <h1>
+                <h1 class="text-black-50">
                     LogIn
                 </h1>
             </div>
-            <div>
-                <label for="CC">CC</label>
-                <input type="number" id="CC" class="form-control" placeholder="CC">
+            <div class="mt-3">
+                <label for="Usuario">Usuario</label>
+                <input type="number" id="CC" class="form-control" placeholder="Usuario">
             </div>
             <div>
-                <label for="password">Pas</label>
-                <input type="password" id="password" class="form-control" placeholder="password">
+                <label for="contraseña">contraseña</label>
+                <input type="password" id="password" class="form-control" placeholder="contraseña">
             </div>
             <div>
                 <button type="submit" class="btn btn-info mt-5" ng-click="login()">Submit</button>
