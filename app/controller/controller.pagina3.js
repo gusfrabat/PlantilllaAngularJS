@@ -73,6 +73,10 @@
 
 
 
+        pagina3Service.AddUser().then(ress => {
+            $log.log(ress);
+        }).catch(err => $log.error(err));
+
 
         var conAjax = $http.post("recibe.php", {
             uno: 1,
@@ -83,6 +87,25 @@
         });
 
 
+
+        //inicializo un objeto en los datos de formulario
+        $scope.fdatos = {};
+
+        // declaro la función enviar
+        $scope.enviar = function () {
+            $http.post("recibe-formulario.php", $scope.fdatos)
+                .then(function (resp) {
+                    console.log(resp);
+                    //por supuesto podrás volcar la respuesta al modelo con algo como vm.res = res;
+                });
+        }
+
+
+        $scope.enviar = () => {
+            pagina3Service.AddData($scope.fdatos).then(respu => {
+                $log.log(respu);
+            }).catch(err => $log.error(err));
+        }
 
     }
 })();
