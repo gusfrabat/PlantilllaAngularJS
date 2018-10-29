@@ -42,18 +42,20 @@ angular.module('PlantillaAngularJs')
           desp: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([{
               files: [
-              'app/controller/controller.pagina3.js'
-            ]
+                'app/service/service.pagina3.js',
+                'app/controller/controller.pagina3.js',
+                'css/pagina3.css'
+              ]
             }]);
           }]
         }
-      }).state('pagina4',{
+      }).state('pagina4', {
         url: '/pagina4',
         templateUrl: 'app/template/pagina4.html',
         controller: 'pagina4Controller',
         resolve: {
           desp: ['$ocLazyLoad', function ($ocLazyLoad) {
-            return $ocLazyLoad.load ([{
+            return $ocLazyLoad.load([{
               files: [
                 'app/controller/controller.pagina4.js',
                 'css/Login.css'

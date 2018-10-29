@@ -1,1 +1,174 @@
-<div class="container-fluid" style="height: 100vh; width: 100vw; background: black"></div>
+<div class="mx-auto mt-5 col-8 text-center ">
+    <!--    <div class="btn btn-danger col-5 " ngf-select ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'"
+        ngf-max-size="20MB" ngf-min-height="100" ngf-resize="{width: 100, height: 100}">Select imagen</div>
+
+
+    <hr>
+    {{dato}}{{hola}}
+    <input type="button" value="hola" ng-click="dato='hola ';hola=' sisisis'" />
+    <hr>
+    <div ng-init="pensamientos = [];">
+        <h1>Altavoz AngularJS</h1>
+        <p>
+            ¿Qué hay de nuevo?
+            <br />
+            <input type="text" ng-model="nuevoPensamiento" />
+            <input type="button" value="Agregar" ng-click="pensamientos.push(nuevoPensamiento);
+   nuevoPensamiento = '';" />
+        </p>
+        <h2>Pensamientos que has tenido</h2>
+        <p ng-repeat="pensamiento in pensamientos" ng-init="paso = $index">
+            Pensaste esto: {{pensamiento}} (Iteración con índice {{paso}})
+        </p>
+    </div>
+
+    <hr>
+    <input type="text" ng-model="campotexto">
+    <br />
+    {{ campotexto }} - {{ camposelect }}
+    <br />
+    <select ng-model="camposelect">
+        <option value="uno">1</option>
+        <option value="dos">2</option>
+    </select>
+
+    <hr>
+    <input type="text" ng-model="campotexto">
+    <br />
+    {{ campotexto }} - {{ camposelect }}
+    <br />
+    <select ng-model="camposelect">
+        <option value="uno">1</option>
+        <option value="dos">2</option>
+    </select>
+    <input type="button" ng-click="campotexto='DesarrolloWeb.com'" value="Pulsa aquí">
+    <hr>
+
+    <div>
+        <h1>Acumulador</h1>
+        <h2>Control de operación:</h2>
+        ¿Cuánto? <input type="text" ng-model="cuanto" size="4" autofocus />
+        <br />
+        <input type="button" value="+" ng-click="sumar()" />
+        <input type="button" value="-" ng-click="restar()" />
+        <h2>Totales:</h2>
+        En el acumulador llevamos <span>{{total}}</span>
+    </div>
+    <hr>
+     ng class
+
+    <div>
+        <h1 ng-class="tamTitular">Acumulador</h1>
+        <select ng-model="tamTitular">
+            <option value="titularpeq">Peque</option>
+            <option value="titulargran">Gran</option>
+        </select>
+        <h2 ng-class="clases">Control de operación:</h2>
+        ¿Cuánto? <input type="text" ng-model="cuanto" size="4" placeholder="0" />
+        <br />
+        <input type="button" value="+" ng-click="sumar()" />
+        <input type="button" value="-" ng-click="restar()" />
+        <h2>Totales:</h2>
+        <p ng-class="{positivo: total>=0, negativo: total<0}">
+            En el acumulador llevamos <span>{{total}}</span>
+        </p>
+    </div>
+
+
+ng-check
+<hr>
+
+
+<p>
+    <input type="checkbox" ng-model="activo" ng-change="avisar()">
+    Este campo es vm.activo y su valor en el modelo es {{ activo }}.
+    <br />
+    Tiene además un ng-change asociado con el método avisar().
+</p>
+<p>
+
+    no funciona el ng-true false
+    <input type="checkbox" ng-model="clarooscuro" />
+    Este campo tiene el value modificado. Ahora vale {{ clarooscuro }}
+</p>
+<p>
+    <input type="button" ng-click="activo=true" value="pulsa para cambiar la propiedad del modelo del primer checkbox a true">
+    Observarás que aunque el estado pueda cambiar, no se invoca al
+    ng-change de ese primer checkbox.
+</p>
+
+ng-repit con json
+<hr>
+-->
+
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">nombre</th>
+                <th scope="col">lat,lng</th>
+                <th scope="col">email</th>
+                <th scope="col">id</th>
+                <th scope="col">acctions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <!--_____________________________________________________-->
+
+
+            <tr ng-repeat="user in s |  orderBy:user.name:false">
+                <td class="text-uppercase"> {{user.name}}</td>
+                <td>{{user.address.geo.lat}},{{user.address.geo.lng}}</td>
+                <td class="text-uppercase">{{user.email}}</td>
+                <td class="text-uppercase">{{user.id}}</td>
+
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-dark btn-sm dropdown-toggle dropdown-toggle-split"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" data-toggle="modal" ng-click="modificar(user)">Modificar</a>
+                            <a class="dropdown-item" data-toggle="modal" ng-click="modificar(user)"> Activar </a>
+                            <a class="dropdown-item" data-toggle="modal" ng-click="modificar(user)">Desactivar</a>
+                            <a class="dropdown-item" data-toggle="modal" ng-click="modificar(user)">Delete</a>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <hr>
+
+    <div>
+        <h1>Pruebo Ajax</h1>
+        <p>
+            Selecciona:
+            <select ng-model="url" ng-change="buscaEnRegion()">
+                <option value="http://restcountries.eu/rest/v1/region/africa">Africa</option>
+                <option value="http://restcountries.eu/rest/v1/region/europe">Europa</option>
+                <option value="http://restcountries.eu/rest/v1/region/americas">America</option>
+            </select>
+        </p>
+        <ul>
+            <li ng-repeat="pais in paises | orderBy:name:false">
+                País: <span>{{pais.name}}</span>, capital: {{pais.capital}}
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>
