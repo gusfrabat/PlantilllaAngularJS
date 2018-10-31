@@ -46,10 +46,12 @@
              console.log("cambié");
          }*/
 
-
+        $scope.an = {};
 
         pagina3Service.getUser().then(res => {
             $scope.s = res.data;
+            $scope.an = res.data;
+            //$log.log($scope.an);
         }).catch(err => $log.error(err));
 
         $scope.userMod = {};
@@ -57,14 +59,14 @@
         $scope.modificar = (data) => {
             $scope.userMod = data;
             $sessionStorage.dataUser = $scope.userMod.id;
-            $log.log($scope.userMod.name);
+          //  $log.log($scope.userMod.name);
         };
 
 
 
         $scope.buscaEnRegion = function () {
             $http.get($scope.url).then(function (respuesta) {
-                console.log("res:", respuesta);
+            //    console.log("res:", respuesta);
                 $scope.paises = respuesta.data;
             });
         }
@@ -72,9 +74,10 @@
 
 
 
-
+        $scope.manzana = {};
         pagina3Service.AddUser().then(ress => {
-            $log.log(ress);
+            $scope.manzana = ress.data;
+           // $log.log($scope.manzana);
         }).catch(err => $log.error(err));
 
 
@@ -83,7 +86,8 @@
             fruta: "manzana"
         });
         conAjax.then(function (respuesta) {
-            console.log(respuesta);
+            $scope.zs = respuesta.data;
+           // console.log(respuesta);
         });
 
 
@@ -95,7 +99,7 @@
         $scope.enviar = function () {
             $http.post("recibe-formulario.php", $scope.fdatos)
                 .then(function (resp) {
-                    console.log(resp);
+             //       console.log(resp);
                     //por supuesto podrás volcar la respuesta al modelo con algo como vm.res = res;
                 });
         }
@@ -103,9 +107,21 @@
 
         $scope.enviar = () => {
             pagina3Service.AddData($scope.fdatos).then(respu => {
-                $log.log(respu);
+            //    $log.log(respu);
             }).catch(err => $log.error(err));
         }
+
+   
+
+
+
+
+
+        pagina3Service.traerdatos().then(rres => {
+            $scope.datosJson = rres.data;
+            $log.log($scope.datos.Json);
+            console.log(rres);
+        }).catch(err => $log.error(err));
 
     }
 })();

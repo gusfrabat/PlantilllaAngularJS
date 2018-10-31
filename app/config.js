@@ -16,6 +16,7 @@ angular.module('PlantillaAngularJs')
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([{
               files: [
+                'app/controller/js.js',
                 'app/controller/controller.inicio.js'
               ]
             }]);
@@ -29,6 +30,7 @@ angular.module('PlantillaAngularJs')
           deps: ['$ocLazyLoad', function ($ocLazyLoad) {
             return $ocLazyLoad.load([{
               files: [
+                'app/service/service.pagina.js',
                 'app/controller/controller.pagina.js'
               ]
             }]);

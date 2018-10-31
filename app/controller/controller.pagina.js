@@ -5,27 +5,28 @@
         .module('PlantillaAngularJs')
         .controller('paginaController', paginaController)
 
-    paginaController.$inject = ['$scope', '$state', '$log'];
+    paginaController.$inject = ['$scope', '$state', '$log', 'paginaService', '$http'];
 
-    function paginaController($scope, $state, $log) {
+    function paginaController($scope, $state, $log, paginaService, $http) {
 
+        $scope.numero = {};
 
-        $scope.products = [];
-        $scope.addItem = function () {
+        $scope.entrada = () => {
+            paginaService.postCc($scope.numero).then(res => {
+                $log.log(res);
+                delete $scope.numero.cedula;
+            }).catch(err => $log.error(err));
+        }  
 
-           // console.log($scope.addMe.toString().length);
-
-            if ($scope.addMe.toString().length === 0) {
-                console.log(funciona);
-            }
-
-            $scope.products.push($scope.addMe);
-            console.log($scope.products.indexOf($scope.addMe));
-
-            delete $scope.addMe;
-        }
-
-
+        $scope.entrada = () => {
+            $http.post("recibe.php", $scope.numero).then(function successCallback(response) {
+                console.log(response);
+                    console.log("Successfully POST-ed data");
+                    delete $scope.numero.cedula;
+                }, function errorCallback(response) {
+                    console.log("POST-ing of data failed");
+                });
+        };
 
 
 
