@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('PlantillaAngularJs')
+        .module('Ausentismo')
         .controller('inicioController', inicioController)
 
     inicioController.$inject = ['$scope', '$state', '$log', '$http'];
@@ -10,7 +10,7 @@
     function inicioController($scope, $state, $log, $http) {
 
         $scope.Pagina2 = () => {
-            $state.go('pagina2');
+            $state.go('SedeInicio');
 
         };
 

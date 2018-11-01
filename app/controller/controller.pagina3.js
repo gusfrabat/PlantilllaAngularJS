@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('PlantillaAngularJs')
+        .module('Ausentismo')
         .controller('pagina3Controller', pagina3Controller)
 
     pagina3Controller.$inject = ['$scope', '$http', 'pagina3Service', '$log', '$sessionStorage'];
@@ -59,14 +59,14 @@
         $scope.modificar = (data) => {
             $scope.userMod = data;
             $sessionStorage.dataUser = $scope.userMod.id;
-          //  $log.log($scope.userMod.name);
+            //  $log.log($scope.userMod.name);
         };
 
 
 
         $scope.buscaEnRegion = function () {
             $http.get($scope.url).then(function (respuesta) {
-            //    console.log("res:", respuesta);
+                //    console.log("res:", respuesta);
                 $scope.paises = respuesta.data;
             });
         }
@@ -77,7 +77,7 @@
         $scope.manzana = {};
         pagina3Service.AddUser().then(ress => {
             $scope.manzana = ress.data;
-           // $log.log($scope.manzana);
+            // $log.log($scope.manzana);
         }).catch(err => $log.error(err));
 
 
@@ -87,7 +87,7 @@
         });
         conAjax.then(function (respuesta) {
             $scope.zs = respuesta.data;
-           // console.log(respuesta);
+            // console.log(respuesta);
         });
 
 
@@ -99,7 +99,7 @@
         $scope.enviar = function () {
             $http.post("recibe-formulario.php", $scope.fdatos)
                 .then(function (resp) {
-             //       console.log(resp);
+                    //       console.log(resp);
                     //por supuesto podrás volcar la respuesta al modelo con algo como vm.res = res;
                 });
         }
@@ -107,11 +107,11 @@
 
         $scope.enviar = () => {
             pagina3Service.AddData($scope.fdatos).then(respu => {
-            //    $log.log(respu);
+                //    $log.log(respu);
             }).catch(err => $log.error(err));
         }
 
-   
+
 
 
 
@@ -122,6 +122,16 @@
             $log.log($scope.datos.Json);
             console.log(rres);
         }).catch(err => $log.error(err));
+
+        $scope.entrada = () => {
+            $http.post("recibe.php").then(function successCallback(response) {
+                contentType: "application/x-www-form-urlencoded"
+                console.log(response);
+                console.log("Successfully POST-ed data");
+            }, function errorCallback(response) {
+                console.log("POST-ing of data failed");
+            });
+        };
 
     }
 })();

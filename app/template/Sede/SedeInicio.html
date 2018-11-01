@@ -1,0 +1,20 @@
+<div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 col-xs-10 mx-auto text-center contenedor  ">
+        <h1 class="text-uppercase">Sede </h1>
+        <p>{{sede.nom_sede}}</p>
+        <div class="mx-auto contenerdor-entrada">
+            <form ng-submit="entrada()">
+                <input ng-model="numero.cedula" placeholder="Digitar cedular" class="form-control col-auto my-5" type="number" autofocus>
+                <button type="submit" ng-click="borrarcampo()"  class="btn btn-info col-5">Entrada Manual</button>
+            </form>
+        </div>
+</div>
+
+
+<hr>
+<hr>
+
+<div class="text-center row col-5 mx-auto">
+    <button type="button" class="btn col-1 btn-outline-primary list-group-item " ng-click="pagina1()">1</button>
+    <button type="button" class="btn col-1 btn-outline-primary list-group-item " ng-click="pagina3()">3</button>
+    <button type="button" class="btn col-1 btn-outline-primary list-group-item " ng-click="pagina4()">4</button>
+</div>

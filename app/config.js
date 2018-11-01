@@ -1,70 +1,55 @@
-angular.module('PlantillaAngularJs')
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider',
-    function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-      $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-      $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
-      $httpProvider.defaults.headers.delete = {
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      };
-      $locationProvider.hashPrefix('');
-      $urlRouterProvider.otherwise('/');
-      $stateProvider.state('inicio', {
-        url: '/',
-        templateUrl: 'app/template/inicio.html',
-        controller: 'inicioController',
-        resolve: {
-          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-            return $ocLazyLoad.load([{
-              files: [
-                'app/controller/js.js',
-                'app/controller/controller.inicio.js'
-              ]
-            }]);
+angular.module('Ausentismo').config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider',
+  function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $httpProvider.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $httpProvider.defaults.headers.delete = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'};
+    $locationProvider.hashPrefix('');
+    $urlRouterProvider.otherwise('/');
+    $stateProvider.state('index', {
+      url: '/',
+      template: '',
+      controller: 'Login2Controller',
+      resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+            return $ocLazyLoad.load([
+              {
+                files: [
+                  'app/controller/controller.Login2.js'
+                ]
+              }
+            ]);
           }]
-        }
-      }).state('pagina2', {
-        url: '/pagina',
-        templateUrl: 'app/template/pagina.html',
-        controller: 'paginaController',
-        resolve: {
-          deps: ['$ocLazyLoad', function ($ocLazyLoad) {
-            return $ocLazyLoad.load([{
-              files: [
-                'app/service/service.pagina.js',
-                'app/controller/controller.pagina.js'
-              ]
-            }]);
-          }]
-        }
-      }).state('pagina3', {
-        url: '/pagina3',
-        templateUrl: 'app/template/pagina3.html',
-        controller: 'pagina3Controller',
-        resolve: {
-          desp: ['$ocLazyLoad', function ($ocLazyLoad) {
-            return $ocLazyLoad.load([{
-              files: [
-                'app/service/service.pagina3.js',
-                'app/controller/controller.pagina3.js',
-                'css/pagina3.css'
-              ]
-            }]);
-          }]
-        }
-      }).state('pagina4', {
-        url: '/pagina4',
-        templateUrl: 'app/template/pagina4.html',
-        controller: 'pagina4Controller',
-        resolve: {
-          desp: ['$ocLazyLoad', function ($ocLazyLoad) {
-            return $ocLazyLoad.load([{
-              files: [
-                'app/controller/controller.pagina4.js',
-                'css/Login.css'
-              ]
-            }]);
-          }]
-        }
-      });
-    }
-  ]);
+      }
+    });/* .state('SedeInicio', {
+      url: '/Sede',
+      templateUrl: 'app/template/Sede/SedeInicio.html',
+      controller: 'sedeinicioController',
+      resolve: {
+        deps: ['$ocLazyLoad', function ($ocLazyLoad) {
+          return $ocLazyLoad.load([{
+            files: [
+              'css/Sede/SedeInicio.css',
+              'app/service/Sede/service.Sedeinicio.js',
+              'app/controller/Sede/controller.SedeInicio.js'
+            ]
+          }]);
+        }]
+      }
+    }).state('pagina3', {
+      url: '/pagina3',
+      templateUrl: 'app/template/pagina3.html',
+      controller: 'pagina3Controller',
+      resolve: {
+        desp: ['$ocLazyLoad', function ($ocLazyLoad) {
+          return $ocLazyLoad.load([{
+            files: [
+              'app/service/service.pagina3.js',
+              'app/controller/controller.pagina3.js',
+              'css/pagina3.css'
+            ]
+          }]);
+        }]
+      }
+    }); */
+  }
+]);

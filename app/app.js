@@ -1,4 +1,4 @@
-angular.module('PlantillaAngularJs', [
+angular.module('Ausentismo', [
   'ui.router',
   'ngFileUpload',
   'ngStorage',

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('PlantillaAngularJs').service('pagina3Service', pagina3Service, );
+    angular.module('Ausentismo').service('pagina3Service', pagina3Service, );
     pagina3Service.$inject = ['$http', '$httpParamSerializerJQLike'];
     
 
@@ -24,7 +24,9 @@
         
 
         this.traerdatos = () => {
+            
             return $http.get("http://192.168.72.98:8080/datasnap/rest/TserverMethods/mostrarsedes/-1");
+            
         };
 
 

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-            .module('Gedosoft')
+            .module('Ausentismo')
             .controller('GestionUsuariosController', GestionUsuariosController);
 
     GestionUsuariosController.$inject = ['$log', '$scope', '$state', '$sessionStorage', '$timeout', 'usuService', 'empresaService', 'roleService', 'actualizarService'];

@@ -1,8 +1,34 @@
-.container_logIn {
-    margin-top: 30vh;
-    background: rgba(192, 211, 248, 0.555);
-    border-radius: 12px;
-    height: 320px;
+.card-login {
+    border-radius: 20px;
+    margin-top: 20vh;
+    padding: 0;
+    color:  rgba(172, 172, 172, 0.8);
 
 }
 
+.form-label-group input {
+    padding: 12px;
+    border-radius: 20px;
+}
+
+.form-label-group label {
+    font-size: 25px;
+}
+
+.form-label-group button {
+    border-radius: 20px;
+    padding: 12px;
+    font-size: 20px;
+}
+
+.card-login div h5 {
+    font-size: 25px;
+}
+
+.card-login div {
+    padding: 1rem;
+}
+
+.container-login {
+    padding: 0px;
+}

@@ -1,0 +1,14 @@
+.contenerdor-entrada form input {
+    padding: 11px;
+    border-radius: 25px;
+}
+
+.contenerdor-entrada form button {
+    padding: 11px;
+    border-radius: 25px;
+    margin-bottom: 25vh;
+}
+
+.contenerdor-entrada {
+    margin-top: 25vh;
+}
